@@ -7,7 +7,7 @@ interface WarningProps {
 const Warning: React.FC<WarningProps> = ({ size = iconSizes.lg }) => {
   return (
     <img
-      src="public/icons/marker-atom.svg"
+      src="../../public/icons/marker-atom.svg"
       width={size}
       height={size}
       alt="Warning Icon"

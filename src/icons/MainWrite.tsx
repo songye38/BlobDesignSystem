@@ -13,8 +13,8 @@ const MainWrite: React.FC<MainWriteProps> = ({
 
   // SVG 파일 경로 (public 폴더 기준)
   const src = variant === 'desktop' 
-    ? 'public/icons/main-write-desktop.svg' 
-    : 'public/icons/main-write-mobile.svg';
+    ? '../../public/icons/main-write-desktop.svg' 
+    : '../../public/icons/main-write-mobile.svg';
 
   return (
     <img 

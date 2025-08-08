@@ -7,7 +7,7 @@ interface UploadProps {
 const Upload: React.FC<UploadProps> = ({ size = iconSizes.xs }) => {
   return (
     <img
-      src="public/icons/upload.svg"
+      src="../../public/icons/upload.svg"
       width={size}
       height={size}
       alt="Upload Icon"
