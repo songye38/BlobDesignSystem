@@ -1,5 +1,6 @@
 import React from 'react';
-import { Category, categoryToBgColor, labelSuffixMap,colors } from '../../tokens';
+import { colors } from '../../tokens';
+import { Category, categoryToBgColor, labelSuffixMap } from '../../types/CategoryType';
 
 export interface ChipProps {
   category: Category;

@@ -1,5 +1,5 @@
 // category.ts
-import { colors } from './colors'; // colors 토큰 경로에 맞게 조정
+import { colors } from '../tokens'; // colors 토큰 경로에 맞게 조정
 
 export type Category = 'recommend' | 'caution' | 'tip' | 'question' | 'help';
 
