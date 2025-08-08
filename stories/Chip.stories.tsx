@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Chip, { ChipProps } from './index';
-import { Category } from '../../tokens';
+import Chip, { ChipProps } from '../src/components/Chip/index';
+import { Category } from '../src/tokens';
 
 const meta: Meta<ChipProps> = {
   title: 'Components/Chip',
