@@ -67,11 +67,11 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
     const renderIcon = () => {
         switch (ctatype) {
             case 'writing':
-                return <WriteIcon size={24} />;
+                return <WriteIcon size="md" />;  // 숫자 대신 string key
             case 'explore':
-                return <ExploreIcon size={24} />;
+                return <ExploreIcon size="md" />;
             case 'article':
-                return <BlobHeart size={24} />;
+                return <BlobHeart size="md" />;
             default:
                 return null;
         }

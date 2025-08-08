@@ -7,7 +7,7 @@ interface RefreshProps {
 const Refresh: React.FC<RefreshProps> = ({ size = iconSizes.xs }) => {
   return (
     <img
-      src="/src/assets/icons/refresh.svg"
+      src="/public/icons/refresh.svg"
       width={size}
       height={size}
       alt="Refresh Icon"

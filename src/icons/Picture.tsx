@@ -7,7 +7,7 @@ interface PictureProps {
 const Picture: React.FC<PictureProps> = ({ size = iconSizes.xs }) => {
   return (
     <img
-      src="/src/assets/icons/picture.svg"
+      src="/public/icons/picture.svg"
       width={size}
       height={size}
       alt="Picture Icon"

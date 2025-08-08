@@ -11,7 +11,7 @@ const Loading: React.FC<LoadingProps> = ({
 
   return (
     <img
-      src="/src/assets/icons/loading.svg"
+      src="/public/icons/loading.svg"
       width={iconSize}
       height={iconSize}
       alt="Loading Icon"
