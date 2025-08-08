@@ -2,11 +2,21 @@ import React from 'react';
 import { Purpose, CTAType, Status,labelSuffixMap } from '../../types/CTAButtontypes';
 import { colors } from '../../tokens/colors';
 
+import ExploreIcon from '../../assets/icons/explore.svg';
+import WriteIcon from '../../assets/icons/write.svg';
+import heartIcon from '../../assets/icons/check-heart-default.svg';
+
 export interface CTAButtonProps {
     purpose: Purpose;
     ctatype: CTAType;
     status: Status;
 }
+
+const iconMap: Record<CTAType, React.FC> = {
+  writing: WriteIcon,
+  article: heartIcon,
+  explore: ExploreIcon,
+};
 
 const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
     let bgColors = colors.primary[100];
@@ -14,7 +24,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
     const gradientBackground = `linear-gradient(90deg, ${bgColors[0]} 0%, ${bgColors[1]} 100%)`;
 
     const containerStyle: React.CSSProperties = {
-        width: '100%',
+        width: 'auto',
         height: '100%',
         paddingLeft: 20,
         paddingRight: 20,
@@ -47,7 +57,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
     };
 
     const textStyle = {
-        color: 'var(--BDS-Grayscale-10, #262626)',
+        color: colors.grayscale[1100],
         fontSize: 18,
         fontFamily: 'IBM Plex Sans KR',
         fontWeight: '600',
@@ -55,11 +65,13 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
         wordWrap: 'break-word' as const,
     };
 
+    const IconComponent = iconMap[ctatype];
     if (purpose === 'desktop') {
+        
         return (
             <div style={containerStyle}>
                 <div style={iconWrapperStyle}>
-                    <div style={iconStyle} />
+                    <IconComponent />
                 </div>
                 <div
                     style={{
@@ -79,7 +91,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
     return (
         <div style={containerStyle}>
             <div style={iconWrapperStyle}>
-                <div style={iconStyle} />
+                <IconComponent />
             </div>
             <div style={textStyle}>${labelSuffixMap[ctatype]}</div>
         </div>

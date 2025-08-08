@@ -60,20 +60,3 @@ export const MobileHover: StoryObj<CTAButtonProps> = {
   },
 };
 
-export const TabletDefault: StoryObj<CTAButtonProps> = {
-  render: Template,
-  args: {
-    purpose: 'tablet',
-    ctatype: 'writing',
-    status: 'default',
-  },
-};
-
-export const TabletHover: StoryObj<CTAButtonProps> = {
-  render: Template,
-  args: {
-    purpose: 'tablet',
-    ctatype: 'writing',
-    status: 'hover',
-  },
-};
