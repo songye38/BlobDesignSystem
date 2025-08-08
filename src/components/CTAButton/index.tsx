@@ -1,10 +1,10 @@
-import React, {SVGProps} from 'react';
-import { Purpose, CTAType, Status,labelSuffixMap } from '../../types/CTAButtontypes';
+import React, { SVGProps } from 'react';
+import { Purpose, CTAType, Status, labelSuffixMap } from '../../types/CTAButtontypes';
 import { colors } from '../../tokens/colors';
 
-import ExploreIcon from '../../assets/icons/explore.svg';
-import WriteIcon from '../../assets/icons/write.svg';
-import heartIcon from '../../assets/icons/check-heart-default.svg';
+import ExploreIcon from '../../icons/Explore';
+import WriteIcon from '../../icons/Write';
+import BlobHeart from '../../icons/BlobHeart';
 
 export interface CTAButtonProps {
     purpose: Purpose;
@@ -12,16 +12,9 @@ export interface CTAButtonProps {
     status: Status;
 }
 
-const iconMap: Record<CTAType, React.FC<SVGProps<SVGSVGElement>>> = {
-  writing: WriteIcon,
-  article: heartIcon,
-  explore: ExploreIcon,
-};
-
 
 const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
 
-    const IconComponent = iconMap[ctatype];
     let bgColors = colors.primary[100];
     if (status === 'hover') bgColors = colors.primary[300];
     const gradientBackground = `linear-gradient(90deg, ${bgColors[0]} 0%, ${bgColors[1]} 100%)`;
@@ -69,13 +62,24 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
     };
 
 
+    const renderIcon = () => {
+        switch (ctatype) {
+            case 'writing':
+                return <WriteIcon size={24} />;
+            case 'explore':
+                return <ExploreIcon size={24} />;
+            case 'article':
+                return <BlobHeart size={24} />;
+            default:
+                return null;
+        }
+    };
+
+
     if (purpose === 'desktop') {
-        
         return (
             <div style={containerStyle}>
-                <div style={iconWrapperStyle}>
-                    <IconComponent width={24} height={24} />
-                </div>
+                <div style={iconWrapperStyle}>{renderIcon()}</div>
                 <div
                     style={{
                         justifyContent: 'center',
@@ -93,10 +97,8 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
     // mobile or tablet
     return (
         <div style={containerStyle}>
-            <div style={iconWrapperStyle}>
-                <IconComponent width={24} height={24} />
-            </div>
-            <div style={textStyle}>${labelSuffixMap[ctatype]}</div>
+            <div style={iconWrapperStyle}>{renderIcon()}</div>
+            <div style={textStyle}>{labelSuffixMap[ctatype]}</div>
         </div>
     );
 };
