@@ -1,5 +1,4 @@
 import React from 'react';
-import { Header } from './Header';
 import Chip from './../src/components/Chip/index';  // 실제 Chip 컴포넌트 위치로 바꿔줘
 // import './page.css';
 
