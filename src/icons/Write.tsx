@@ -7,11 +7,14 @@ interface WriteProps {
 
 const Write: React.FC<WriteProps> = ({
   size = iconSizes.xs,
-}) => (
-  <WriteSVG
-    width={size}
-    height={size}
-  />
-);
+}) => {
+  console.log('WriteSVG type:', typeof WriteSVG);  // 여기 추가
+  return (
+    <WriteSVG
+      width={size}
+      height={size}
+    />
+  );
+};
 
 export default Write;
