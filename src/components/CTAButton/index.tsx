@@ -25,7 +25,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
 
     const containerStyle: React.CSSProperties = {
         width: 'auto',
-        height: '100%',
+        height: 'auto',
         paddingLeft: 20,
         paddingRight: 20,
         paddingTop: 12,
@@ -81,7 +81,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
                         display: 'inline-flex',
                     }}
                 >
-                    <div style={textStyle}>${labelSuffixMap[ctatype]}</div>
+                    <div style={textStyle}>{labelSuffixMap[ctatype]}</div>
                 </div>
             </div>
         );
