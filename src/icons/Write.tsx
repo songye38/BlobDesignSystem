@@ -1,5 +1,4 @@
 import { iconSizes } from '../tokens';
-import  { ReactComponent as WriteSVG } from '../assets/icons/write.svg';
 
 interface WriteProps {
   size?: number;
@@ -8,11 +7,12 @@ interface WriteProps {
 const Write: React.FC<WriteProps> = ({
   size = iconSizes.xs,
 }) => {
-  console.log('WriteSVG type:', typeof WriteSVG);  // 여기 추가
   return (
-    <WriteSVG
+    <img
+      src="/src/assets/icons/write.svg"
       width={size}
       height={size}
+      alt="Write Icon"
     />
   );
 };

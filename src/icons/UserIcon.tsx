@@ -1,25 +1,26 @@
 import { iconSizes } from '../tokens';
-import  { ReactComponent as LoggedInSVG } from '../assets/icons/loggedIn.svg';
-import  { ReactComponent as LoggedOutSVG } from '../assets/icons/loggedOut.svg';
 
 interface UserIconProps {
   variant?: 'loggedIn' | 'loggedOut';
-  size?: number;  // 사이즈를 props로 받도록 추가
-  color?: string; // 혹시 필요하면 색상도 받을 수 있게 추가 가능
+  size?: number;
+  color?: string; // img 태그에선 color 직접 적용 불가, CSS로 처리해야 함
 }
 
 const UserIcon: React.FC<UserIconProps> = ({
   variant = 'loggedOut',
-  size = iconSizes.md,   // 기본 사이즈는 디자인 토큰으로
-  color,                // color는 SVG에 따라 다르니 필요하면 사용
+  size = iconSizes.md,
+  color,
 }) => {
-  const Icon = variant === 'loggedIn' ? LoggedInSVG : LoggedOutSVG;
+  const src = variant === 'loggedIn' ? '/src/assets/icons/loggedIn.svg' : '/src/assets/icons/loggedOut.svg';
 
+  // color는 img 태그에 직접 적용 못 하니까, 필요하면 스타일로 처리하거나 부모에서 제어하는게 좋아
   return (
-    <Icon
+    <img
+      src={src}
       width={size}
       height={size}
-      fill={color}   // color를 넣고 싶으면 SVG가 fill 속성을 받아야 함
+      alt={variant === 'loggedIn' ? 'Logged In Icon' : 'Logged Out Icon'}
+      style={color ? { filter: `drop-shadow(0 0 0 ${color})` } : undefined}
     />
   );
 };

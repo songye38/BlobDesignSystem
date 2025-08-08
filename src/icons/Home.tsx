@@ -1,17 +1,22 @@
 import { iconSizes } from '../tokens';
-import  { ReactComponent as HomeSVG } from '../assets/icons/home.svg';
 
 interface HomeProps {
-  size?: number;
+  size?: keyof typeof iconSizes;
 }
 
 const Home: React.FC<HomeProps> = ({
-  size = iconSizes.xs,
-}) => (
-  <HomeSVG
-    width={size}
-    height={size}
-  />
-);
+  size = 'xs',
+}) => {
+  const iconSize = iconSizes[size];
+
+  return (
+    <img
+      src="/src/assets/icons/home.svg"
+      width={iconSize}
+      height={iconSize}
+      alt="Home Icon"
+    />
+  );
+};
 
 export default Home;

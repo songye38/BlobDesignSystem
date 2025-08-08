@@ -1,20 +1,25 @@
 import { iconSizes, colors } from '../tokens';
-import  { ReactComponent as CurrentLocationSVG } from '../assets/icons/current-location.svg';
 
 interface CurrentLocationProps {
-  size?: number;
+  size?: keyof typeof iconSizes;
   color?: string;
 }
 
 const CurrentLocation: React.FC<CurrentLocationProps> = ({
-  size = iconSizes.xs,
-  color = colors.grayscale[700],  // 기본 색상 토큰에서 가져오기
-}) => (
-  <CurrentLocationSVG
-    width={size}
-    height={size}
-    fill={color}  // fill 속성에 컬러 넣기
-  />
-);
+  size = 'xs',
+  color = colors.grayscale[700],
+}) => {
+  const iconSize = iconSizes[size];
+
+  return (
+    <img
+      src="/src/assets/icons/current-location.svg"
+      width={iconSize}
+      height={iconSize}
+      alt="Current Location Icon"
+      style={{ filter: color ? `drop-shadow(0 0 0 ${color})` : undefined }}
+    />
+  );
+};
 
 export default CurrentLocation;

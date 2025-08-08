@@ -1,6 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 import { mergeConfig } from 'vite';
-import svgrPlugin from 'vite-plugin-svgr';
+import svgr from 'vite-plugin-svgr';
 
 const config: StorybookConfig = {
   stories: [
@@ -20,15 +20,15 @@ const config: StorybookConfig = {
   },
 
 
-  async viteFinal(config) {
+async viteFinal(config) {
     config.plugins = config.plugins || [];
-    config.plugins.push(svgrPlugin({
-      svgrOptions: {
-        icon: true, // 아이콘 용도로 최적화 옵션
-      }
-    }));
+    config.plugins.push(
+      svgr({
+        svgrOptions: { icon: true },
+      })
+    );
     return config;
-  }
+  },
 };
 
 export default config;

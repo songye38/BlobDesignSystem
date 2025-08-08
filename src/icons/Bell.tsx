@@ -1,5 +1,3 @@
-import { ReactComponent as BellDefault } from '../assets/icons/bell-default.svg';
-import { ReactComponent as BellFilled } from '../assets/icons/bell-alarm.svg';
 import { iconSizes } from '../tokens';
 
 interface BellProps {
@@ -9,12 +7,17 @@ interface BellProps {
 
 const Bell: React.FC<BellProps> = ({
   size = 'md',
-  variant = 'default', // 'default'나 'alarm' 중에 하나로 맞춰줘
+  variant = 'alarm',
 }) => {
-  const Icon = variant === 'alarm' ? BellFilled : BellDefault;
+  // SVG 파일 public 폴더에 옮겼다고 가정하고 경로 지정
+  const src =
+    variant === 'alarm'
+      ? '/src/assets/icons/bell-alarm.svg'
+      : '/src/assets/icons/bell-default.svg';
+
   const iconSize = iconSizes[size];
 
-  return <Icon width={iconSize} height={iconSize} />;
+  return <img src={src} width={iconSize} height={iconSize} alt="Bell icon" />;
 };
 
 export default Bell;

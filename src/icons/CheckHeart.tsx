@@ -1,9 +1,7 @@
 import { iconSizes } from '../tokens';
-import { ReactComponent as BlobHeartDefault } from '../assets/icons/check-heart-default.svg';
-import { ReactComponent as BlobHeartFilled } from '../assets/icons/check-heart-filled.svg';
 
 interface BlobHeartProps {
-  size?: keyof typeof iconSizes; // 'xs-16' | 'sm-20' | 'md-24' | 'lg-28'
+  size?: keyof typeof iconSizes; // 'xs' | 'sm' | 'md' | 'lg' 등
   variant?: 'default' | 'filled';
 }
 
@@ -11,10 +9,13 @@ const BlobHeart: React.FC<BlobHeartProps> = ({
   size = 'md',
   variant = 'filled',
 }) => {
-  const Icon = variant === 'filled' ? BlobHeartFilled : BlobHeartDefault;
   const iconSize = iconSizes[size];
+  const src =
+    variant === 'filled'
+      ? '/src/assets/icons/check-heart-filled.svg'
+      : '/src/assets/icons/check-heart-default.svg';
 
-  return <Icon width={iconSize} height={iconSize} />;
+  return <img src={src} width={iconSize} height={iconSize} alt="Blob heart icon" />;
 };
 
 export default BlobHeart;

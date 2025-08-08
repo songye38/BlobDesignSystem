@@ -1,17 +1,22 @@
 import { iconSizes } from '../tokens';
-import { ReactComponent as ExploreSVG } from '../assets/icons/explore.svg';
 
 interface ExploreProps {
-  size?: number;
+  size?: keyof typeof iconSizes;
 }
 
 const Explore: React.FC<ExploreProps> = ({
-  size = iconSizes.xs,
-}) => (
-  <ExploreSVG
-    width={size}
-    height={size}
-  />
-);
+  size = 'xs',
+}) => {
+  const iconSize = iconSizes[size];
+
+  return (
+    <img
+      src="/src/assets/icons/explore.svg"
+      width={iconSize}
+      height={iconSize}
+      alt="Explore Icon"
+    />
+  );
+};
 
 export default Explore;

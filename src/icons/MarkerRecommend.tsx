@@ -1,10 +1,18 @@
 import { iconSizes } from '../tokens';
-import  { ReactComponent as RecommendSVG } from '../assets/icons/marker-thumbs-up.svg';
 
 interface RecommendProps {
   size?: number;
 }
 
-const Upload: React.FC<RecommendProps> = ({ size = iconSizes.lg }) => {
-  return <RecommendSVG width={size} height={size} />;
+const Recommend: React.FC<RecommendProps> = ({ size = iconSizes.lg }) => {
+  return (
+    <img
+      src="/src/assets/icons/marker-thumbs-up.svg"
+      width={size}
+      height={size}
+      alt="Recommend Icon"
+    />
+  );
 };
+
+export default Recommend;

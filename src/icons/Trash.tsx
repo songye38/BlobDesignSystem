@@ -1,10 +1,18 @@
 import { iconSizes } from '../tokens';
-import  { ReactComponent as TrashSVG } from '../assets/icons/trash.svg';
 
 interface TrashProps {
   size?: number;
 }
 
-const Upload: React.FC<TrashProps> = ({ size = iconSizes.xs }) => {
-  return <TrashSVG width={size} height={size} />;
+const Trash: React.FC<TrashProps> = ({ size = iconSizes.xs }) => {
+  return (
+    <img
+      src="/src/assets/icons/trash.svg"
+      width={size}
+      height={size}
+      alt="Trash Icon"
+    />
+  );
 };
+
+export default Trash;

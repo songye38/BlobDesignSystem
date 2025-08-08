@@ -1,17 +1,18 @@
 import { iconSizes } from '../tokens';
-import  { ReactComponent as RefreshSVG } from '../assets/icons/refresh.svg';
 
 interface RefreshProps {
   size?: number;
 }
 
-const Refresh: React.FC<RefreshProps> = ({
-  size = iconSizes.xs,
-}) => (
-  <RefreshSVG
-    width={size}
-    height={size}
-  />
-);
+const Refresh: React.FC<RefreshProps> = ({ size = iconSizes.xs }) => {
+  return (
+    <img
+      src="/src/assets/icons/refresh.svg"
+      width={size}
+      height={size}
+      alt="Refresh Icon"
+    />
+  );
+};
 
 export default Refresh;

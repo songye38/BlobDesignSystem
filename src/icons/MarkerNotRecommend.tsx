@@ -1,10 +1,18 @@
 import { iconSizes } from '../tokens';
-import   { ReactComponent as NotRecommendSVG } from '../assets/icons/marker-thumbs-down.svg';
 
-interface NotRecommentProps {
+interface NotRecommendProps {
   size?: number;
 }
 
-const Upload: React.FC<NotRecommentProps> = ({ size = iconSizes.lg }) => {
-  return <NotRecommendSVG width={size} height={size} />;
+const NotRecommend: React.FC<NotRecommendProps> = ({ size = iconSizes.lg }) => {
+  return (
+    <img 
+      src="/src/assets/icons/marker-thumbs-down.svg" 
+      width={size} 
+      height={size} 
+      alt="Not Recommend" 
+    />
+  );
 };
+
+export default NotRecommend;

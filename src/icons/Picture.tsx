@@ -1,10 +1,18 @@
 import { iconSizes } from '../tokens';
-import  { ReactComponent as PictureSVG } from '../assets/icons/picture.svg';
 
 interface PictureProps {
   size?: number;
 }
 
-const Upload: React.FC<PictureProps> = ({ size = iconSizes.xs }) => {
-  return <PictureSVG width={size} height={size} />;
+const Picture: React.FC<PictureProps> = ({ size = iconSizes.xs }) => {
+  return (
+    <img
+      src="/src/assets/icons/picture.svg"
+      width={size}
+      height={size}
+      alt="Picture Icon"
+    />
+  );
 };
+
+export default Picture;
