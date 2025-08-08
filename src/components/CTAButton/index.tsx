@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {SVGProps} from 'react';
 import { Purpose, CTAType, Status,labelSuffixMap } from '../../types/CTAButtontypes';
 import { colors } from '../../tokens/colors';
 
@@ -12,13 +12,16 @@ export interface CTAButtonProps {
     status: Status;
 }
 
-const iconMap: Record<CTAType, React.FC> = {
+const iconMap: Record<CTAType, React.FC<SVGProps<SVGSVGElement>>> = {
   writing: WriteIcon,
   article: heartIcon,
   explore: ExploreIcon,
 };
 
+
 const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
+
+    const IconComponent = iconMap[ctatype];
     let bgColors = colors.primary[100];
     if (status === 'hover') bgColors = colors.primary[300];
     const gradientBackground = `linear-gradient(90deg, ${bgColors[0]} 0%, ${bgColors[1]} 100%)`;
@@ -65,13 +68,13 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
         wordWrap: 'break-word' as const,
     };
 
-    const IconComponent = iconMap[ctatype];
+
     if (purpose === 'desktop') {
         
         return (
             <div style={containerStyle}>
                 <div style={iconWrapperStyle}>
-                    <IconComponent />
+                    <IconComponent width={24} height={24} />
                 </div>
                 <div
                     style={{
@@ -91,7 +94,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
     return (
         <div style={containerStyle}>
             <div style={iconWrapperStyle}>
-                <IconComponent />
+                <IconComponent width={24} height={24} />
             </div>
             <div style={textStyle}>${labelSuffixMap[ctatype]}</div>
         </div>
