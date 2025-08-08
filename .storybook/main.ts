@@ -18,11 +18,17 @@ const config: StorybookConfig = {
     name: "@storybook/react-vite",
     options: {}
   },
-  viteFinal: async (config) => {
-    return mergeConfig(config, {
-      plugins: [svgrPlugin()],
-    });
-  },
+
+
+  async viteFinal(config) {
+    config.plugins = config.plugins || [];
+    config.plugins.push(svgrPlugin({
+      svgrOptions: {
+        icon: true, // 아이콘 용도로 최적화 옵션
+      }
+    }));
+    return config;
+  }
 };
 
 export default config;
