@@ -1,5 +1,5 @@
 import { iconSizes } from '../tokens';
-import ExploreSVG from '../assets/icons/Explore.svg';
+import ExploreSVG from '../assets/icons/explore.svg';
 
 interface ExploreProps {
   size?: number;

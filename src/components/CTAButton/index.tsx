@@ -1,10 +1,12 @@
-import React, { SVGProps } from 'react';
+import React from 'react';
 import { Purpose, CTAType, Status, labelSuffixMap } from '../../types/CTAButtontypes';
 import { colors } from '../../tokens/colors';
 
 import ExploreIcon from '../../icons/Explore';
 import WriteIcon from '../../icons/Write';
 import BlobHeart from '../../icons/BlobHeart';
+
+
 
 export interface CTAButtonProps {
     purpose: Purpose;
