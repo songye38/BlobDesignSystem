@@ -1,41 +1,88 @@
 import React from 'react';
-import { Category, categoryToBgColor, labelSuffixMap } from '../../types/CategoryType';
-import { colors } from '../../tokens'; // colors 토큰 경로에 맞게 조정
+import { Purpose, CTAType, Status,labelSuffixMap } from '../../types/CTAButtontypes';
+import { colors } from '../../tokens/colors';
 
 export interface CTAButtonProps {
-  category: Category;
-  prefix: string;
+    purpose: Purpose;
+    ctatype: CTAType;
+    status: Status;
 }
 
-const CTAButton: React.FC<CTAButtonProps> = ({ category, prefix }) => {
-  const bgColor = categoryToBgColor[category];
-  const label = `${prefix} ${labelSuffixMap[category]}`;
+const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
+    let bgColors = colors.primary[100];
+    if (status === 'hover') bgColors = colors.primary[300];
+    const gradientBackground = `linear-gradient(90deg, ${bgColors[0]} 0%, ${bgColors[1]} 100%)`;
 
-  return (
-    <div
-      style={{
-        padding: '4px 8px',
-        background: bgColor,
-        borderRadius: 4,
+    const containerStyle: React.CSSProperties = {
+        width: '100%',
+        height: '100%',
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingTop: 12,
+        paddingBottom: 12,
+        background: gradientBackground,
+        borderRadius: 12,
+        flexDirection: 'column', // 여기서 타입이 맞아야 함
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        gap: 55,
         display: 'inline-flex',
-        alignItems: 'center',
-        gap: 10,
-      }}
-    >
-      <div
-        style={{
-          color: colors.grayscale[100],
-          fontSize: 13,
-          fontFamily: 'IBM Plex Sans KR',
-          fontWeight: 500,
-          lineHeight: '17.94px',
-          wordWrap: 'break-word',
-        }}
-      >
-        {label}
-      </div>
-    </div>
-  );
-};
+    };
 
+    const iconWrapperStyle = {
+        width: 24,
+        height: 24,
+        position: 'relative' as const,
+        overflow: 'hidden',
+    };
+
+    const iconStyle = {
+        width: 20,
+        height: 17.67,
+        left: 2,
+        top: 3,
+        position: 'absolute' as const,
+        outline: '2px var(--BDS-Grayscale-10, #262626) solid',
+        outlineOffset: '-1px',
+    };
+
+    const textStyle = {
+        color: 'var(--BDS-Grayscale-10, #262626)',
+        fontSize: 18,
+        fontFamily: 'IBM Plex Sans KR',
+        fontWeight: '600',
+        lineHeight: 25.92,
+        wordWrap: 'break-word' as const,
+    };
+
+    if (purpose === 'desktop') {
+        return (
+            <div style={containerStyle}>
+                <div style={iconWrapperStyle}>
+                    <div style={iconStyle} />
+                </div>
+                <div
+                    style={{
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 8,
+                        display: 'inline-flex',
+                    }}
+                >
+                    <div style={textStyle}>${labelSuffixMap[ctatype]}</div>
+                </div>
+            </div>
+        );
+    }
+
+    // mobile or tablet
+    return (
+        <div style={containerStyle}>
+            <div style={iconWrapperStyle}>
+                <div style={iconStyle} />
+            </div>
+            <div style={textStyle}>${labelSuffixMap[ctatype]}</div>
+        </div>
+    );
+};
 export default CTAButton;
