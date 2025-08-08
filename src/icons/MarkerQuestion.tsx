@@ -1,5 +1,5 @@
 import { iconSizes } from '../tokens';
-import QuestionSVG from '../assets/icons/marker-magic-wand.svg';
+import  { ReactComponent as QuestionSVG } from '../assets/icons/marker-magic-wand.svg';
 
 interface QuestionProps {
   size?: number;

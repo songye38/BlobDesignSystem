@@ -1,5 +1,5 @@
 import { iconSizes } from '../tokens';
-import RefreshSVG from '../assets/icons/refresh.svg';
+import  { ReactComponent as RefreshSVG } from '../assets/icons/refresh.svg';
 
 interface RefreshProps {
   size?: number;

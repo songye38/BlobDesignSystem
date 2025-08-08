@@ -1,5 +1,5 @@
 import { iconSizes, colors } from '../tokens';
-import CurrentLocationSVG from '../assets/icons/current-location.svg';
+import  { ReactComponent as CurrentLocationSVG } from '../assets/icons/current-location.svg';
 
 interface CurrentLocationProps {
   size?: number;

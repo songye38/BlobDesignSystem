@@ -1,5 +1,5 @@
 import { iconSizes } from '../tokens';
-import HelpRequestSVG from '../assets/icons/marker-signal.svg';
+import  { ReactComponent as HelpRequestSVG } from '../assets/icons/marker-signal.svg';
 
 interface HelpRequestProps {
   size?: number;

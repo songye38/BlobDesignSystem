@@ -1,5 +1,5 @@
 import { iconSizes } from '../tokens';
-import PictureSVG from '../assets/icons/picture.svg';
+import  { ReactComponent as PictureSVG } from '../assets/icons/picture.svg';
 
 interface PictureProps {
   size?: number;

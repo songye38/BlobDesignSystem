@@ -1,5 +1,5 @@
-import BellDefault from '../assets/icons/bell-default.svg';
-import BellFilled from '../assets/icons/bell-alarm.svg';
+import { ReactComponent as BellDefault } from '../assets/icons/bell-default.svg';
+import { ReactComponent as BellFilled } from '../assets/icons/bell-alarm.svg';
 import { iconSizes } from '../tokens';
 
 interface BellProps {
@@ -9,9 +9,9 @@ interface BellProps {
 
 const Bell: React.FC<BellProps> = ({
   size = 'md',
-  variant = 'filled',
+  variant = 'default', // 'default'나 'alarm' 중에 하나로 맞춰줘
 }) => {
-  const Icon = variant === 'filled' ? BellFilled : BellDefault;
+  const Icon = variant === 'alarm' ? BellFilled : BellDefault;
   const iconSize = iconSizes[size];
 
   return <Icon width={iconSize} height={iconSize} />;

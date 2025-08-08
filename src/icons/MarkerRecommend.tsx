@@ -1,5 +1,5 @@
 import { iconSizes } from '../tokens';
-import RecommendSVG from '../assets/icons/marker-thumbs-up.svg';
+import  { ReactComponent as RecommendSVG } from '../assets/icons/marker-thumbs-up.svg';
 
 interface RecommendProps {
   size?: number;

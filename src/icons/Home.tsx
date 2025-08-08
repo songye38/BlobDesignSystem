@@ -1,5 +1,5 @@
 import { iconSizes } from '../tokens';
-import HomeSVG from '../assets/icons/home.svg';
+import  { ReactComponent as HomeSVG } from '../assets/icons/home.svg';
 
 interface HomeProps {
   size?: number;

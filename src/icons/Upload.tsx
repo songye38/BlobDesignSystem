@@ -1,5 +1,5 @@
 import { iconSizes } from '../tokens';
-import UploadSVG from '../assets/icons/upload.svg';
+import  { ReactComponent as UploadSVG } from '../assets/icons/upload.svg';
 
 interface UploadProps {
   size?: number;

@@ -1,5 +1,5 @@
 import { iconSizes } from '../tokens';
-import WarningSVG from '../assets/icons/marker-atom.svg';
+import  { ReactComponent as WarningSVG } from '../assets/icons/marker-atom.svg';
 
 interface WarningProps {
   size?: number;

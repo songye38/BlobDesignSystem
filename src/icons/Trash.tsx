@@ -1,5 +1,5 @@
 import { iconSizes } from '../tokens';
-import TrashSVG from '../assets/icons/trash.svg';
+import  { ReactComponent as TrashSVG } from '../assets/icons/trash.svg';
 
 interface TrashProps {
   size?: number;

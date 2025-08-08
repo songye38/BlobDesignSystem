@@ -1,6 +1,6 @@
 import { iconSizes } from '../tokens';
-import BacktotopDesktop from '../assets/icons/back-to-top-desktop.svg';
-import BacktotopMobile from '../assets/icons/back-to-top-mobile.svg';
+import { ReactComponent as BacktotopDesktop } from '../assets/icons/back-to-top-desktop.svg';
+import { ReactComponent as BacktotopMobile } from '../assets/icons/back-to-top-mobile.svg';
 
 interface BacktotopProps {
   variant?: 'desktop' | 'mobile';
@@ -9,7 +9,7 @@ interface BacktotopProps {
 
 const Backtotop: React.FC<BacktotopProps> = ({
   variant = 'desktop',
-  size = iconSizes.md, // 토큰 기본 사이즈 사용
+  size = iconSizes.md,
 }) => {
   const Icon = variant === 'desktop' ? BacktotopDesktop : BacktotopMobile;
 

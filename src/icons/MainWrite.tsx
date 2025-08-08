@@ -1,5 +1,5 @@
-import MainWriteDesktop from '../assets/icons/main-write-desktop.svg';
-import MainWriteMobile from '../assets/icons/main-write-mobile.svg';
+import  { ReactComponent as MainWriteDesktop } from '../assets/icons/main-write-desktop.svg';
+import  { ReactComponent as MainWriteMobile } from '../assets/icons/main-write-mobile.svg';
 
 interface MainWriteProps {
   variant?: 'desktop' | 'mobile';

@@ -1,5 +1,5 @@
 import { iconSizes } from '../tokens';
-import WriteSVG from '../assets/icons/write.svg';
+import  { ReactComponent as WriteSVG } from '../assets/icons/write.svg';
 
 interface WriteProps {
   size?: number;

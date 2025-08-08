@@ -1,5 +1,5 @@
 import { iconSizes, colors } from '../tokens';
-import LoadingSVG from '../assets/icons/loading.svg';
+import  { ReactComponent as LoadingSVG } from '../assets/icons/loading.svg';
 
 interface LoadingProps {
   size?: number;

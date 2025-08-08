@@ -1,5 +1,5 @@
 import { iconSizes } from '../tokens';
-import NotRecommendSVG from '../assets/icons/marker-thumbs-down.svg';
+import   { ReactComponent as NotRecommendSVG } from '../assets/icons/marker-thumbs-down.svg';
 
 interface NotRecommentProps {
   size?: number;

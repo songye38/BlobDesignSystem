@@ -1,6 +1,6 @@
 import { iconSizes } from '../tokens';
-import LoggedInSVG from '../assets/icons/loggedIn.svg';
-import LoggedOutSVG from '../assets/icons/loggedOut.svg';
+import  { ReactComponent as LoggedInSVG } from '../assets/icons/loggedIn.svg';
+import  { ReactComponent as LoggedOutSVG } from '../assets/icons/loggedOut.svg';
 
 interface UserIconProps {
   variant?: 'loggedIn' | 'loggedOut';
