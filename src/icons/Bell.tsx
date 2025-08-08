@@ -12,8 +12,8 @@ const Bell: React.FC<BellProps> = ({
   // SVG 파일 public 폴더에 옮겼다고 가정하고 경로 지정
   const src =
     variant === 'alarm'
-      ? '/public/icons/bell-alarm.svg'
-      : '/public/icons/bell-default.svg';
+      ? 'public/icons/bell-alarm.svg'
+      : 'public/icons/bell-default.svg';
 
   const iconSize = iconSizes[size];
 

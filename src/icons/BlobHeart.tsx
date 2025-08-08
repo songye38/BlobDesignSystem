@@ -9,7 +9,7 @@ const BlobHeart: React.FC<BlobHeartProps> = ({
   size = 'xs',
 }) => {
   const iconSize = iconSizes[size];
-  const src = '/public/icons/check-heart.svg'; // public 폴더에 SVG 파일 옮겼다고 가정
+  const src = 'public/icons/check-heart.svg'; // public 폴더에 SVG 파일 옮겼다고 가정
 
   return <img src={src} width={iconSize} height={iconSize} alt="Blob heart icon" />;
 };

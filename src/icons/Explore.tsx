@@ -11,7 +11,7 @@ const Explore: React.FC<ExploreProps> = ({
 
   return (
     <img
-      src="/public/icons/explore.svg"
+      src="public/icons/explore.svg"
       width={iconSize}
       height={iconSize}
       alt="Explore Icon"

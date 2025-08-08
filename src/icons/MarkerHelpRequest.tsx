@@ -7,7 +7,7 @@ interface HelpRequestProps {
 const Upload: React.FC<HelpRequestProps> = ({ size = iconSizes.lg }) => {
   return (
     <img 
-      src="/public/icons/marker-signal.svg" 
+      src="public/icons/marker-signal.svg" 
       width={size} 
       height={size} 
       alt="Help Request" 

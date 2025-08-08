@@ -7,7 +7,7 @@ interface QuestionProps {
 const Question: React.FC<QuestionProps> = ({ size = iconSizes.lg }) => {
   return (
     <img
-      src="/public/icons/marker-magic-wand.svg"
+      src="public/icons/marker-magic-wand.svg"
       width={size}
       height={size}
       alt="Question Icon"

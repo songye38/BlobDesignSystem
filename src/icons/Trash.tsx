@@ -7,7 +7,7 @@ interface TrashProps {
 const Trash: React.FC<TrashProps> = ({ size = iconSizes.xs }) => {
   return (
     <img
-      src="/public/icons/trash.svg"
+      src="public/icons/trash.svg"
       width={size}
       height={size}
       alt="Trash Icon"

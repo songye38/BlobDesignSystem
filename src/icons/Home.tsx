@@ -11,7 +11,7 @@ const Home: React.FC<HomeProps> = ({
 
   return (
     <img
-      src="/public/icons/home.svg"
+      src="public/icons/home.svg"
       width={iconSize}
       height={iconSize}
       alt="Home Icon"

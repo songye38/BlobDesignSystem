@@ -11,7 +11,7 @@ const UserIcon: React.FC<UserIconProps> = ({
   size = iconSizes.md,
   color,
 }) => {
-  const src = variant === 'loggedIn' ? '/public/icons/loggedIn.svg' : '/src/assets/icons/loggedOut.svg';
+  const src = variant === 'loggedIn' ? 'public/icons/loggedIn.svg' : 'public/icons/loggedOut.svg';
 
   // color는 img 태그에 직접 적용 못 하니까, 필요하면 스타일로 처리하거나 부모에서 제어하는게 좋아
   return (

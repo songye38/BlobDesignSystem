@@ -11,7 +11,7 @@ const Write: React.FC<WriteProps> = ({
 
   return (
     <img
-      src="/public/icons/write.svg"
+      src="public/icons/write.svg"
       width={iconSize}
       height={iconSize}
       alt="Write Icon"

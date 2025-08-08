@@ -13,7 +13,7 @@ const CurrentLocation: React.FC<CurrentLocationProps> = ({
 
   return (
     <img
-      src="/public/icons/current-location.svg"
+      src="public/icons/current-location.svg"
       width={iconSize}
       height={iconSize}
       alt="Current Location Icon"
