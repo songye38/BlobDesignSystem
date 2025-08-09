@@ -12,8 +12,8 @@ const BlobHeart: React.FC<BlobHeartProps> = ({
   const iconSize = iconSizes[size];
   const src =
     variant === 'filled'
-      ? '../../public/icons/check-heart-filled.svg'
-      : '../../public/icons/check-heart-default.svg';
+      ? '/icons/check-heart-filled.svg'
+      : '/icons/check-heart-default.svg';
 
   return <img src={src} width={iconSize} height={iconSize} alt="Blob heart icon" />;
 };

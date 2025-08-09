@@ -7,7 +7,7 @@ interface NotRecommendProps {
 const NotRecommend: React.FC<NotRecommendProps> = ({ size = iconSizes.lg }) => {
   return (
     <img 
-      src="../../public/icons/marker-thumbs-down.svg" 
+      src="/icons/marker-thumbs-down.svg" 
       width={size} 
       height={size} 
       alt="Not Recommend" 
