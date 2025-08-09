@@ -1,8 +1,8 @@
 export const iconSizes = {
-  xxl: '200px',
-  xl: '180px',
-  lg: '28px',
-  md: '24px',
-  sm: '20px',
-  xs: '16px',
-};
+  xxl: 200,
+  xl: 180,
+  lg: 28,
+  md: 24,
+  sm: 20,
+  xs: 16,
+} as const;

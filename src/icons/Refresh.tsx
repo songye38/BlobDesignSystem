@@ -16,4 +16,5 @@ const Refresh: React.FC<RefreshProps> = ({ size = iconSizes.xs }) => {
   );
 };
 
+
 export default Refresh;
