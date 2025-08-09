@@ -1,5 +1,5 @@
 import React from 'react';
-import { Category, categoryToHoverBgColor} from '../../types/CategoryType';
+import { Category, categoryToHoverBgColor } from '../../types/CategoryType';
 
 interface MarkerDetailProps {
     type: Category; //위험, 추천, 팁, 질문과 같은 항목이 들어온다 -> 배경색과 연관
@@ -89,7 +89,10 @@ const MarkerDetail: React.FC<MarkerDetailProps> = ({ type, prefix, timeAgo, titl
         fontFamily: 'IBM Plex Sans KR',
         fontWeight: 400,
         lineHeight: '21.90px',
-        wordWrap: 'break-word',
+        overflow: 'hidden',
+        display: '-webkit-box',
+        WebkitLineClamp: 1, // 보여줄 줄 수
+        WebkitBoxOrient: 'vertical',
     };
 
     return (
