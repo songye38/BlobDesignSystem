@@ -18,11 +18,13 @@ export interface CTAButtonProps {
 const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
 
     let bgColors = colors.primary[100];
+    let widthSize = 'auto';
     if (status === 'hover') bgColors = colors.primary[300];
+    if (purpose=='mobile') widthSize = '335px';
     const gradientBackground = `linear-gradient(90deg, ${bgColors[0]} 0%, ${bgColors[1]} 100%)`;
 
     const containerStyle: React.CSSProperties = {
-        width: 'auto',
+        width: widthSize,
         height: 'auto',
         paddingLeft: 20,
         paddingRight: 20,
@@ -37,29 +39,14 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
         display: 'inline-flex',
     };
 
-    const iconWrapperStyle = {
-        width: 24,
-        height: 24,
-        position: 'relative' as const,
-        overflow: 'hidden',
-    };
 
-    const iconStyle = {
-        width: 20,
-        height: 17.67,
-        left: 2,
-        top: 3,
-        position: 'absolute' as const,
-        outline: '2px var(--BDS-Grayscale-10, #262626) solid',
-        outlineOffset: '-1px',
-    };
 
     const textStyle = {
         color: colors.grayscale[1100],
         fontSize: 18,
         fontFamily: 'IBM Plex Sans KR',
         fontWeight: '600',
-        lineHeight: 25.92,
+        lineHeight: '25.92px',
         wordWrap: 'break-word' as const,
     };
 
@@ -81,7 +68,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
     if (purpose === 'desktop') {
         return (
             <div style={containerStyle}>
-                <div style={iconWrapperStyle}>{renderIcon()}</div>
+                <div>{renderIcon()}</div>
                 <div
                     style={{
                         justifyContent: 'center',
@@ -99,7 +86,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
     // mobile or tablet
     return (
         <div style={containerStyle}>
-            <div style={iconWrapperStyle}>{renderIcon()}</div>
+            <div>{renderIcon()}</div>
             <div style={textStyle}>{labelSuffixMap[ctatype]}</div>
         </div>
     );
