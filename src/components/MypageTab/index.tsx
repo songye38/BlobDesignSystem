@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { MainPageTabType } from '../../types/MyTabType'
+import {typography} from '../../tokens/typography'
 
 interface MypageTabProps {
     activeTab: MainPageTabType;
@@ -43,12 +44,10 @@ const MypageTab: React.FC<MypageTabProps> = ({ activeTab, onTabChange }) => {
         justifyContent: 'center',
         display: 'flex',
         flexDirection: 'column',
-        fontSize: 16,
         fontFamily: 'IBM Plex Sans KR',
-        fontWeight: 500,
-        lineHeight: '24px',
         wordWrap: 'break-word',
         color: isActive ? 'var(--BDS-Grayscale-13, black)' : 'var(--BDS-Grayscale-7, #8C8C8C)',
+        ...typography.Body1.Normal
     });
 
     return (

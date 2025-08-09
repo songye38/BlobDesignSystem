@@ -1,6 +1,6 @@
 import React from 'react';
 import { Purpose, CTAType, Status, labelSuffixMap } from '../../types/CTAButtontypes';
-import { colors } from '../../tokens/colors';
+import { colors,typography } from '../../tokens';
 
 import ExploreIcon from '../../icons/Explore';
 import WriteIcon from '../../icons/Write';
@@ -43,11 +43,9 @@ const CTAButton: React.FC<CTAButtonProps> = ({ purpose, ctatype, status }) => {
 
     const textStyle = {
         color: colors.grayscale[1100],
-        fontSize: 18,
         fontFamily: 'IBM Plex Sans KR',
-        fontWeight: '600',
-        lineHeight: '25.92px',
         wordWrap: 'break-word' as const,
+        ...typography.Headline1
     };
 
 

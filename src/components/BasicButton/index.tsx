@@ -1,6 +1,6 @@
 import React from 'react';
 import { Status, Type } from '../../types/BasicButtonType';
-import { colors } from '../../tokens/colors';
+import { colors,typography } from '../../tokens';
 
 interface BasicButtonProps {
   status: Status;
@@ -83,13 +83,15 @@ const BasicButton: React.FC<BasicButtonProps> = ({ status, type, label, onClick 
     alignItems: 'center',
     gap: 10,
     display: 'inline-flex',
-    fontSize: 14,
+    // fontSize: 14,
     fontFamily: 'IBM Plex Sans KR',
-    fontWeight: 600,
-    lineHeight: '19.88px',
+    // fontWeight: 600,
+    // lineHeight: '19.88px',
     cursor: status === 'disabled' ? 'not-allowed' : 'pointer',
     transition: 'all 0.2s ease-in-out',
     userSelect: 'none',
+
+    ...typography.Label1.Normal
   };
 
   // status가 hover나 pressed일 땐 따로 처리할 수 있는데, 지금은 style만 지정해둔 상태니까

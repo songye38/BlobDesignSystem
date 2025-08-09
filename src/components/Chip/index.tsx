@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors } from '../../tokens';
+import { colors,typography } from '../../tokens';
 import { Category, categoryToBgColor, labelSuffixMap } from '../../types/CategoryType';
 
 export interface ChipProps {
@@ -25,11 +25,9 @@ const Chip: React.FC<ChipProps> = ({ category, prefix }) => {
       <div
         style={{
           color: colors.grayscale[100],
-          fontSize: 13,
           fontFamily: 'IBM Plex Sans KR',
-          fontWeight: 500,
-          lineHeight: '17.94px',
           wordWrap: 'break-word',
+          ...typography.Label2
         }}
       >
         {label}
