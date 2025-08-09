@@ -3,7 +3,7 @@ import CTAButton, { CTAButtonProps } from '../src/components/CTAButton/index';
 import { PurposeOptions, CTATypeOptions, StatusOptions } from '../src/types/CTAButtontypes';
 
 const meta: Meta<CTAButtonProps> = {
-  title: 'Components/CTAButton',
+  title: 'components/Button/CTAButton',
   component: CTAButton,
   argTypes: {
     purpose: {

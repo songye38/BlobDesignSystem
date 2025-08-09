@@ -4,7 +4,7 @@ import BasicButton from '../src/components/BasicButton';
 import { Status, Type } from '../src/types/BasicButtonType';
 
 const meta: Meta<typeof BasicButton> = {
-  title: 'Components/BasicButton',
+  title: 'components/Button/BasicButton',
   component: BasicButton,
   argTypes: {
     status: {
