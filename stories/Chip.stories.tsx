@@ -2,14 +2,16 @@ import { Meta, StoryObj } from '@storybook/react';
 import Chip, { ChipProps } from '../src/components/Chip/index';
 import { Category } from '../src/types/CategoryType';
 
+const categories: Category[] = ['recommend', 'caution', 'tip', 'question', 'help'];
+
 const meta: Meta<ChipProps> = {
   title: 'Components/Chip',
-    tags: ['autodocs'],
+  tags: ['autodocs'],
   component: Chip,
   argTypes: {
     category: {
       control: 'select',
-      options: ['recommend', 'caution', 'tip', 'question', 'help'] as Category[],
+      options: categories,
     },
     prefix: {
       control: 'text',
@@ -25,6 +27,19 @@ type Story = StoryObj<ChipProps>;
 export const Default: Story = {
   args: {
     category: 'recommend',
+    prefix: '숙소',
+  },
+};
+
+export const AllVariants: Story = {
+  render: (args) => (
+    <>
+      {categories.map((category) => (
+        <Chip key={category} {...args} category={category} />
+      ))}
+    </>
+  ),
+  args: {
     prefix: '숙소',
   },
 };
