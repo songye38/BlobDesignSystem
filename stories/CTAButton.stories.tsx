@@ -4,6 +4,7 @@ import { PurposeOptions, CTATypeOptions, StatusOptions } from '../src/types/CTAB
 
 const meta: Meta<CTAButtonProps> = {
   title: 'components/Button/CTAButton',
+    tags: ['autodocs'],
   component: CTAButton,
   argTypes: {
     purpose: {

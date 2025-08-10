@@ -5,6 +5,7 @@ import { Status, Type } from '../src/types/BasicButtonType';
 
 const meta: Meta<typeof BasicButton> = {
   title: 'components/Button/BasicButton',
+    tags: ['autodocs'],
   component: BasicButton,
   argTypes: {
     status: {

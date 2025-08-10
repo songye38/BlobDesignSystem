@@ -4,6 +4,7 @@ import { Category } from '../src/types/CategoryType';
 
 const meta: Meta<ChipProps> = {
   title: 'Components/Chip',
+    tags: ['autodocs'],
   component: Chip,
   argTypes: {
     category: {
