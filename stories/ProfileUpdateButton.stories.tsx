@@ -43,3 +43,20 @@ export const Active: Story = {
         status: 'active',
     },
 };
+
+// AllVariants 추가
+export const AllVariants: Story = {
+    render: (args) => (
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+            {TypeOptions.map((type) =>
+                StatusOptions.map((status) => (
+                    <div key={`${type}-${status}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <ProfileUpdateButton {...args} type={type} status={status} />
+                        <span style={{ fontSize: 12, marginTop: 4 }}>{`${type} / ${status}`}</span>
+                    </div>
+                ))
+            )}
+        </div>
+    ),
+    args: {},
+};
