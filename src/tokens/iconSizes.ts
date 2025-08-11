@@ -5,4 +5,5 @@ export const iconSizes = {
   md: 24,
   sm: 20,
   xs: 16,
+  xxs: 12,
 } as const;
