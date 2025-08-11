@@ -1,0 +1,27 @@
+import React from 'react';
+import { colors } from '../tokens/colors'; // colors 경로 맞게 조절
+
+interface CautionIconProps {
+  color?: string;
+  size?: number;
+}
+
+const CautionIcon: React.FC<CautionIconProps> = ({ color = colors.category.Caution_basic, size = 16 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.8283 3.83822C12.3904 5.40031 12.3904 7.93297 10.8283 9.49507M5.17139 9.49507C3.6093 7.93297 3.6093 5.40031 5.17139 3.83822M3.28563 11.3807C0.682134 8.77723 0.682134 4.55613 3.28563 1.95264M12.714 1.95264C15.3175 4.55613 15.3175 8.77723 12.714 11.3807M7.99982 8C8.7362 8 9.33316 7.40305 9.33316 6.66667C9.33316 5.93029 8.7362 5.33333 7.99982 5.33333C7.26344 5.33333 6.66649 5.93029 6.66649 6.66667C6.66649 7.40305 7.26344 8 7.99982 8ZM7.99982 8V14"
+      stroke={color}
+      strokeWidth={1.2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export default CautionIcon;

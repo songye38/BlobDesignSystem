@@ -39,3 +39,12 @@ export const labelSuffixMap: Record<Category, string> = {
   question: '궁금해요',
   help: '도와주세요',
 };
+
+export const typeToLabelMap: Record<Category, string> = {
+  recommend: '추천',
+  caution: '주의',
+  tip: '비추천',
+  question: '질문',
+  help: '도움요청',
+};
+
