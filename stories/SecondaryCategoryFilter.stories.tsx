@@ -6,7 +6,7 @@ import { Category } from '../src/types/CategoryType';  // 경로 맞게 조정
 const categoryOptions: Category[] = ['recommend', 'caution', 'tip', 'question', 'help'];
 
 const meta: Meta<typeof SecondaryCategoryFilter> = {
-  title: 'Components/SecondaryCategoryFilter',
+  title: 'components/Filtering/SecondaryCategoryFilter',
   component: SecondaryCategoryFilter,
   argTypes: {
     label: { control: 'text' },

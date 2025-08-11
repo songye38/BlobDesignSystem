@@ -4,7 +4,7 @@ import FirstCategoryFilter from '../src/components/FirstCategoryFilter';
 import { Category } from '../src/types/CategoryType';
 
 const meta: Meta<typeof FirstCategoryFilter> = {
-  title: 'components/FirstCategoryFilter',
+  title: 'components/Filtering/FirstCategoryFilter',
   component: FirstCategoryFilter,
   tags: ['autodocs'],
   argTypes: {
