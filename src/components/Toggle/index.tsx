@@ -4,7 +4,7 @@ import React from 'react';
 import {colors} from '../../tokens/colors'
 
 
-type Status = 'toggled' | 'untoggled';
+export type Status = 'toggled' | 'untoggled';
 
 
 interface ToggleProps {

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import Toggle from '../src/components/Toggle'; // 경로는 상황에 맞게 조정
-import { Status } from '../src/types/ToggleType'; // Status 타입 분리해놨다면 임포트
+import Toggle, {Status} from '../src/components/Toggle'; // 경로는 상황에 맞게 조정
 
 const meta: Meta<typeof Toggle> = {
   title: 'components/Toggle',
