@@ -15,7 +15,7 @@ export const BgColorByStatus: Record<Status, string> = {
 export const OutlineByStatus: Record<Status, string> = {
   unselected: colors.grayscale[500],
   disabled: colors.grayscale[500],
-  intermeditate: `linear-gradient(90deg, ${colors.primary[400][0]} 0%, ${colors.primary[400][1]} 100%)`,
+  intermeditate: colors.primary[400][0],
   selected: colors.grayscale[100],
   alreaySelected: colors.grayscale[500],
 };
